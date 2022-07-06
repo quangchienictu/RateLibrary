@@ -1,3 +1,4 @@
+<pre>
 RateAppDiaLog rateAppDiaLog = new RateAppDiaLog.Builder(this)
                    .setTextTitle("Your Opinion Matter To Us!")
                     .setTextTitleColorLiner("#F47500","#FFBC3A")
@@ -19,3 +20,4 @@ RateAppDiaLog rateAppDiaLog = new RateAppDiaLog.Builder(this)
                    .build();
 
             rateAppDiaLog.show();
+</pre>
