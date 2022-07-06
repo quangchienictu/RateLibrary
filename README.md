@@ -21,3 +21,11 @@ RateAppDiaLog rateAppDiaLog = new RateAppDiaLog.Builder(this)
 
             rateAppDiaLog.show();
 </pre>
+
+
+
+
+
+dependencies {
+	        implementation 'com.github.quangchienictu:RateLibrary:1.0.0'
+	}
