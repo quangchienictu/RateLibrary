@@ -22,7 +22,6 @@ public class MainActivity extends AppCompatActivity {
                    .setTextTitle("Your Opinion Matter To Us!")
                     .setTextTitleColorLiner("#F47500","#FFBC3A")
                     .setDrawableButtonRate(R.drawable.border_rate)
-                    .setExitApp(false)
                     .setColorRatingBar("#EC5656")
                     .setNumberRateInApp(5)
                     .setOnclickBtn(new IClickBtn() {
@@ -34,6 +33,11 @@ public class MainActivity extends AppCompatActivity {
                         @Override
                         public void onClickRate(float rate) {
                             Toast.makeText(MainActivity.this,rate+"",Toast.LENGTH_SHORT).show();
+                        }
+
+                        @Override
+                        public void onReviewAppSuccess() {
+                            finishAffinity();
                         }
                     })
                    .build();

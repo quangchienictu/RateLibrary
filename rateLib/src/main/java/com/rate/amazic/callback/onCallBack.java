@@ -6,4 +6,6 @@ public interface onCallBack {
     void onSubmit(String review);
 
     void onRate();
+
+    void onReviewAppSuccess();
 }

@@ -106,7 +106,7 @@ public class RateAppDiaLog extends Dialog {
         btnRate.setOnClickListener(v->{builder.onClickBtn.onClickRate(rtb.getRating());
             if(rtb.getRating()>=builder.numberRateInApp){
                 if(builder.isRateInApp){
-                    reviewApp(context,builder.isExitApp);
+                    reviewApp(context);
                 }else{
                     dismiss();
                 }
@@ -121,7 +121,7 @@ public class RateAppDiaLog extends Dialog {
         if(builder.colorRatingBar!=null)
         rtb.setProgressTintList(ColorStateList.valueOf(Color.parseColor(builder.colorRatingBar)));
     }
-    public void reviewApp(Context context,Boolean isBackPress) {
+    public void reviewApp(Context context) {
         ReviewManager manager = ReviewManagerFactory.create(context);
         com.google.android.play.core.tasks.Task<com.google.android.play.core.review.ReviewInfo> request = manager.requestReviewFlow();
         request.addOnCompleteListener(task -> {
@@ -129,12 +129,8 @@ public class RateAppDiaLog extends Dialog {
                         ReviewInfo reviewInfo = task.getResult();
                         Task<Void> flow = manager.launchReviewFlow(((Activity) context), reviewInfo);
                         flow.addOnCompleteListener(task2 -> {
-                            if (isBackPress){
-                                System.exit(0);
-                            }else{
-                                dismiss();
-                            }
-
+                            builder.onClickBtn.onReviewAppSuccess();
+                            dismiss();
                         });
                     } else {
                         Log.e("ReviewError", "" + task.getException().toString());
@@ -271,10 +267,10 @@ public class RateAppDiaLog extends Dialog {
             this.onClickBtn = onClickBtn;
             return this;
         }
-        public Builder setExitApp(Boolean isExitApp) {
+       /* public Builder setExitApp(Boolean isExitApp) {
             this.isExitApp = isExitApp;
             return this;
-        }
+        }*/
         public Builder setNumberRateInApp(int numberRate) {
             this.numberRateInApp = numberRate;
             return this;
