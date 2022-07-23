@@ -1,76 +1,82 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:paddingVertical="10dp"
-    android:layout_marginHorizontal="20dp"
+    android:layout_height="wrap_content"
     android:layout_gravity="center"
+    android:layout_marginHorizontal="40dp"
     android:background="@drawable/dialog_rate_border"
-    android:orientation="vertical"
     android:gravity="center_horizontal"
-    android:layout_height="wrap_content">
+    android:orientation="vertical"
+    android:paddingVertical="10dp">
+
     <ImageView
         android:id="@+id/imgRate"
-        android:layout_marginVertical="10dp"
-        android:src="@drawable/ic_star_0"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"/>
+        android:layout_width="120dp"
+        android:layout_height="wrap_content"
+        android:src="@drawable/ic_star_0" />
+
     <TextView
-        android:layout_marginHorizontal="20dp"
+        android:layout_marginBottom="15dp"
         android:id="@+id/tvTitle"
-        android:layout_marginVertical="10dp"
-        android:textStyle="bold"
-        android:textColor="@color/main"
-        android:gravity="center_horizontal"
-        android:textSize="28sp"
-        android:text="Your opinion matter to us!"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"/>
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="20dp"
+        android:gravity="center_horizontal"
+        android:text="Your opinion matter to us!"
+        android:textColor="@color/main"
+        android:textSize="28sp" />
+
     <TextView
         android:id="@+id/tvContent"
-        android:textColor="#939393"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="20dp"
+        android:gravity="center_horizontal"
         android:lineHeight="22dp"
-        android:gravity="center_horizontal"
-        android:layout_marginHorizontal="20dp"
         android:text="If you enjoy this Office Reader, would you mind rating us on the Google Play, then?"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"/>
+        android:textColor="#939393"
+        android:textSize="13sp" />
+
     <LinearLayout
-        android:gravity="center_horizontal"
-        android:layout_marginVertical="15dp"
-        android:layout_marginHorizontal="20dp"
-        android:orientation="horizontal"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        android:layout_marginVertical="15dp"
+        android:gravity="center_horizontal"
+        android:orientation="horizontal">
+
         <androidx.appcompat.widget.AppCompatRatingBar
-            android:isIndicator="false"
-            android:layout_marginTop="10dp"
             android:id="@+id/rtb"
+            style="@style/RatingBar"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
+            android:isIndicator="false"
             android:numStars="5"
-            style="@style/RatingBar"
-            android:theme="@style/RatingBar"
-            android:stepSize="1" />
+            android:stepSize="1"
+            android:theme="@style/RatingBar" />
     </LinearLayout>
+
     <TextView
         android:id="@+id/btnRate"
-        android:textStyle="bold"
-        android:textColor="@color/white"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:background="@drawable/bg_border_white"
-        android:paddingHorizontal="30dp"
+        android:paddingHorizontal="50dp"
         android:paddingVertical="10dp"
         android:text="Rate us"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"/>
+        android:textColor="@color/white"
+        android:textSize="14sp"
+        android:textStyle="bold" />
+
     <TextView
-        android:textStyle="bold"
-        android:textColor="#939393"
         android:id="@+id/btnNotnow"
-        android:paddingVertical="10dp"
-        android:layout_marginVertical="10dp"
-        android:text="Not now"
-        android:paddingHorizontal="10dp"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"/>
+        android:layout_height="wrap_content"
+        android:layout_marginVertical="10dp"
+        android:paddingHorizontal="50dp"
+        android:paddingVertical="10dp"
+        android:text="Not now"
+        android:textColor="#939393"
+        android:textSize="14sp"
+        android:textStyle="bold" />
 </LinearLayout>

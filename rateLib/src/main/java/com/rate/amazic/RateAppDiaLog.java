@@ -8,6 +8,7 @@ import android.graphics.Color;
 import android.graphics.LinearGradient;
 import android.graphics.PorterDuff;
 import android.graphics.Shader;
+import android.graphics.Typeface;
 import android.graphics.drawable.ColorDrawable;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
@@ -101,7 +102,12 @@ public class RateAppDiaLog extends Dialog {
         if(builder.contentSize!=0){
             tvContent.setTextSize(builder.contentSize);
         }
-
+        if(builder.typeface!=null){
+            tvTitle.setTypeface(builder.typeface);
+            tvContent.setTypeface(builder.typeface);
+            btnRate.setTypeface(builder.typeface);
+            btnNotnow.setTypeface(builder.typeface);
+        }
         btnNotnow.setOnClickListener(v->{builder.onClickBtn.onclickNotNow();dismiss();});
         btnRate.setOnClickListener(v->{builder.onClickBtn.onClickRate(rtb.getRating());
             if(rtb.getRating()>=builder.numberRateInApp){
@@ -209,6 +215,9 @@ public class RateAppDiaLog extends Dialog {
         private boolean isRateInApp = true;
         private int numberRateInApp = 4;
         private String colorRatingBar;
+        private Typeface typeface = null;
+
+
         public Builder(Activity context) {
             this.context = context;
         }
@@ -273,6 +282,10 @@ public class RateAppDiaLog extends Dialog {
         }*/
         public Builder setNumberRateInApp(int numberRate) {
             this.numberRateInApp = numberRate;
+            return this;
+        }
+        public Builder setFontFamily(Typeface typeface){
+            this.typeface = typeface;
             return this;
         }
         public RateAppDiaLog build() {

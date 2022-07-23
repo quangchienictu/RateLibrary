@@ -14,6 +14,11 @@
         <entry key="..\:/APP/MyApplication/rateLib/src/main/res/drawable/ratingbar_full.xml" value="0.2925" />
         <entry key="..\:/APP/MyApplication/rateLib/src/main/res/drawable/s.xml" value="0.2925" />
         <entry key="..\:/APP/MyApplication/rateLib/src/main/res/layout/dialog_rate.xml" value="0.33" />
+        <entry key="..\:/AmazicLib/RateLibrary/app/src/main/res/drawable/border_rate.xml" value="0.2585" />
+        <entry key="..\:/AmazicLib/RateLibrary/app/src/main/res/font/xxx.xml" value="0.31197916666666664" />
+        <entry key="..\:/AmazicLib/RateLibrary/app/src/main/res/layout/activity_main.xml" value="0.2828125" />
+        <entry key="..\:/AmazicLib/RateLibrary/rateLib/src/main/res/drawable/ic_star_0.xml" value="0.287" />
+        <entry key="..\:/AmazicLib/RateLibrary/rateLib/src/main/res/layout/dialog_rate.xml" value="0.2828125" />
       </map>
     </option>
   </component>
