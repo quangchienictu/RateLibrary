@@ -1,14 +1,17 @@
 <pre>
 RateAppDiaLog rateAppDiaLog = new RateAppDiaLog.Builder(this)
-                   .setTextTitle("Your Opinion Matter To Us!")
+                    .setTextTitle("Your Opinion Matter To Us!")
+                    .setTextContent("If you enjoy this Office Reader, would you mind rating us on the Google Play, then?")
+                    .setTextButton("Rate us","Not now")
                     .setTextTitleColorLiner("#F47500","#FFBC3A")
                     .setDrawableButtonRate(R.drawable.border_rate)
                     .setColorRatingBar("#EC5656")
                     .setNumberRateInApp(5)
+                    .setFontFamily(ResourcesCompat.getFont(this, R.font.xxx))
                     .setOnclickBtn(new IClickBtn() {
                         @Override
                         public void onclickNotNow() {
-                            Toast.makeText(MainActivity.this,"ádhiasjdiasjd",Toast.LENGTH_SHORT).show();
+                            Toast.makeText(MainActivity.this,"onclickNotNow",Toast.LENGTH_SHORT).show();
                         }
 
                         @Override
@@ -22,6 +25,8 @@ RateAppDiaLog rateAppDiaLog = new RateAppDiaLog.Builder(this)
                         }
                     })
                    .build();
+
+            rateAppDiaLog.show();
 </pre>
 
 
