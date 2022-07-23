@@ -40,9 +40,10 @@ dependencies {
 
 
 ==  R.drawable.border_rate  =====
-
+<pre>
 <?xml version="1.0" encoding="utf-8"?>
 <shape xmlns:android="http://schemas.android.com/apk/res/android">
     <gradient android:startColor="#EC5656" android:endColor="@color/purple_700"/>
     <corners android:radius="20sp"/>
 </shape>
+</pre>
