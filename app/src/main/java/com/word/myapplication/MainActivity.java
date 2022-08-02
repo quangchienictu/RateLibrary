@@ -25,6 +25,7 @@ public class MainActivity extends AppCompatActivity {
                     .setTextButton("Rate us","Not now")
                     .setTextTitleColorLiner("#F47500","#FFBC3A")
                     .setDrawableButtonRate(R.drawable.border_rate)
+                    .setBackgroundDialog(R.drawable.border_rate)
                     .setColorRatingBar("#EC5656")
                     .setNumberRateInApp(5)
                     .setFontFamily(ResourcesCompat.getFont(this, R.font.xxx))

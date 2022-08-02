@@ -18,6 +18,7 @@ import android.util.Log;
 import android.view.Window;
 import android.view.WindowManager;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.RatingBar;
 import android.widget.TextView;
 
@@ -40,6 +41,7 @@ public class RateAppDiaLog extends Dialog {
     private Context context;
     private ImageView imgRate;
     private AppCompatRatingBar rtb;
+    private LinearLayout dialog;
 
     public RateAppDiaLog(@NonNull Context context, onCallBack callback) {
         super(context);
@@ -71,6 +73,7 @@ public class RateAppDiaLog extends Dialog {
         rtb = findViewById(R.id.rtb);
         btnRate = findViewById(R.id.btnRate);
         btnNotnow = findViewById(R.id.btnNotnow);
+        dialog = findViewById(R.id.dialog);
         if (builder.title != null)
             tvTitle.setText(builder.title);
         if (builder.content != null)
@@ -107,6 +110,9 @@ public class RateAppDiaLog extends Dialog {
             tvContent.setTypeface(builder.typeface);
             btnRate.setTypeface(builder.typeface);
             btnNotnow.setTypeface(builder.typeface);
+        }
+        if(builder.drawableDialog!=0){
+            dialog.setBackgroundResource(builder.drawableRateUs);
         }
         btnNotnow.setOnClickListener(v->{builder.onClickBtn.onclickNotNow();dismiss();});
         btnRate.setOnClickListener(v->{builder.onClickBtn.onClickRate(rtb.getRating());
@@ -216,7 +222,7 @@ public class RateAppDiaLog extends Dialog {
         private int numberRateInApp = 4;
         private String colorRatingBar;
         private Typeface typeface = null;
-
+        private int drawableDialog =0;
 
         public Builder(Activity context) {
             this.context = context;
@@ -288,6 +294,11 @@ public class RateAppDiaLog extends Dialog {
             this.typeface = typeface;
             return this;
         }
+        public Builder setBackgroundDialog(int drawable){
+            this.drawableDialog = drawable;
+            return this;
+        }
+
         public RateAppDiaLog build() {
             return new RateAppDiaLog(context, this);
         }
