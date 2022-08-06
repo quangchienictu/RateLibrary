@@ -112,7 +112,7 @@ public class RateAppDiaLog extends Dialog {
             btnNotnow.setTypeface(builder.typeface);
         }
         if(builder.drawableDialog!=0){
-            dialog.setBackgroundResource(builder.drawableRateUs);
+            dialog.setBackgroundResource(builder.drawableDialog);
         }
         btnNotnow.setOnClickListener(v->{builder.onClickBtn.onclickNotNow();dismiss();});
         btnRate.setOnClickListener(v->{builder.onClickBtn.onClickRate(rtb.getRating());
