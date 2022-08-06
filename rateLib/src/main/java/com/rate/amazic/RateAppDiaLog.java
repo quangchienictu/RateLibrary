@@ -86,7 +86,7 @@ public class RateAppDiaLog extends Dialog {
             btnRate.setTextColor(builder.rateUsColor);
         }
         if(builder.notNowColor!=0){
-            btnRate.setTextColor(builder.notNowColor);
+            btnNotnow.setTextColor(builder.notNowColor);
         }
 
         if(builder.colorStart!=null&&builder.colorEnd!=null){
