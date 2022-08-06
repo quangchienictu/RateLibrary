@@ -82,6 +82,12 @@ public class RateAppDiaLog extends Dialog {
             tvTitle.setTextColor(builder.titleColor);
         if (builder.contentColor != 0)
             tvContent.setTextColor(builder.contentColor);
+        if(builder.rateUsColor!=0){
+            btnRate.setTextColor(builder.rateUsColor);
+        }
+        if(builder.notNowColor!=0){
+            btnRate.setTextColor(builder.notNowColor);
+        }
 
         if(builder.colorStart!=null&&builder.colorEnd!=null){
             TextPaint paint = tvTitle.getPaint();
@@ -211,7 +217,7 @@ public class RateAppDiaLog extends Dialog {
     }
     public static class Builder {
         private String title, content,rateUs,notNow;
-        private int titleColor = 0, contentColor = 0, rateUsDra;
+        private int titleColor = 0, contentColor = 0, rateUsDra,rateUsColor=0,notNowColor=0;
         private String colorStart,colorEnd;
         private int titleSize=0,contentSize=0;
         private final Activity context;
@@ -261,6 +267,14 @@ public class RateAppDiaLog extends Dialog {
             this.titleColor = color;
             return this;
         }
+        public Builder setTextRateUsColor(int color) {
+            this.rateUsColor = color;
+            return this;
+        }
+        public Builder setTextNotNowColor(int color) {
+            this.notNowColor = color;
+            return this;
+        }
         public Builder setTextTitleSize(int titleSize) {
             this.titleSize = titleSize;
             return this;
@@ -270,7 +284,7 @@ public class RateAppDiaLog extends Dialog {
             return this;
         }
         public Builder setTextContentColor(int color) {
-            this.contentSize = color;
+            this.contentColor = color;
             return this;
         }
         public Builder setColorRatingBar(String color){
