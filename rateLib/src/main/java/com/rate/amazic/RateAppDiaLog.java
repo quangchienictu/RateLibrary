@@ -120,6 +120,7 @@ public class RateAppDiaLog extends Dialog {
         if(builder.drawableDialog!=0){
             dialog.setBackgroundResource(builder.drawableDialog);
         }
+
         btnNotnow.setOnClickListener(v->{builder.onClickBtn.onclickNotNow();dismiss();});
         btnRate.setOnClickListener(v->{builder.onClickBtn.onClickRate(rtb.getRating());
             if(rtb.getRating()>=builder.numberRateInApp){
@@ -138,6 +139,10 @@ public class RateAppDiaLog extends Dialog {
 
         if(builder.colorRatingBar!=null)
         rtb.setProgressTintList(ColorStateList.valueOf(Color.parseColor(builder.colorRatingBar)));
+
+        if(builder.numberRateDefault>0&&builder.numberRateDefault<6){
+            rtb.setRating(builder.numberRateDefault);
+        }
     }
     public void reviewApp(Context context) {
         ReviewManager manager = ReviewManagerFactory.create(context);
@@ -229,6 +234,7 @@ public class RateAppDiaLog extends Dialog {
         private String colorRatingBar;
         private Typeface typeface = null;
         private int drawableDialog =0;
+        private int numberRateDefault =0;
 
         public Builder(Activity context) {
             this.context = context;
@@ -310,6 +316,11 @@ public class RateAppDiaLog extends Dialog {
         }
         public Builder setBackgroundDialog(int drawable){
             this.drawableDialog = drawable;
+            return this;
+        }
+
+        public Builder setNumberRateDefault(int number){
+            this.numberRateDefault = number;
             return this;
         }
 
